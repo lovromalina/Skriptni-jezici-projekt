@@ -1,0 +1,87 @@
+# Europske trgovine računala, računalnih komponenti i elektronike.
+#
+# Selektori NISU obavezni: alat najprije pokušava automatski izdvojiti naziv i
+# cijenu (JSON-LD, OpenGraph, microdata, heuristika). Polje `selectors` služi
+# samo kao rezervna opcija ako automatika na nekoj trgovini ne uspije.
+#
+# `requires_js` i dostupnost bez blokade provjeravaju se u fazi 2; trgovine
+# koje se ne mogu pouzdano dohvaćati zamjenjuju se drugima iz iste države.
+
+stores:
+  - name: Links
+    domain: links.hr
+    country: HR
+    currency: EUR
+    language: hr
+    requires_js: false
+
+  - name: Instar informatika
+    domain: instar-informatika.hr
+    country: HR
+    currency: EUR
+    language: hr
+    requires_js: false
+
+  - name: Alternate
+    domain: alternate.de
+    country: DE
+    currency: EUR
+    language: de
+    requires_js: false
+
+  - name: Megekko
+    domain: megekko.nl
+    country: NL
+    currency: EUR
+    language: nl
+    requires_js: false
+
+  - name: LDLC
+    domain: ldlc.com
+    country: FR
+    currency: EUR
+    language: fr
+    requires_js: false
+
+  - name: PcComponentes
+    domain: pccomponentes.com
+    country: ES
+    currency: EUR
+    language: es
+    requires_js: false
+
+  - name: Alza
+    domain: alza.cz
+    country: CZ
+    currency: CZK
+    language: cs
+    requires_js: false
+
+  - name: x-kom
+    domain: x-kom.pl
+    country: PL
+    currency: PLN
+    language: pl
+    requires_js: false
+
+# Primjer rezervnih selektora (popuniti samo po potrebi):
+#   - name: Primjer
+#     domain: primjer.eu
+#     country: AT
+#     currency: EUR
+#     language: de
+#     requires_js: true
+#     selectors:
+#       title: "h1.product-title"
+#       price: "span.price-final"
+
+# Izrazi kojima se na stranici prepoznaje deklarirana najniža cijena u 30 dana.
+# Popis se dopunjuje stvarnim formulacijama pronađenim na stranicama trgovina.
+lowest_30d_patterns:
+  hr: ["najniža cijena u (posljednjih|zadnjih) 30 dana"]
+  de: ["niedrigster preis (der letzten|in den letzten) 30 tage"]
+  nl: ["laagste prijs (van de|in de) (afgelopen|laatste) 30 dagen"]
+  fr: ["prix le plus bas (des|au cours des) 30 derniers jours"]
+  es: ["precio más bajo (de los|en los) últimos 30 días"]
+  cs: ["nejnižší cena za (posledních )?30 dn[íi]"]
+  pl: ["najniższa cena z (ostatnich )?30 dni"]
